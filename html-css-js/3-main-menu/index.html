@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multilevel Menu - CSS Positioning Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CSS Multilevel Menu with Positioning</h1>
+        
+        <nav>
+            <ul class="navbar">
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+                <li>
+                    <a href="#products">Products</a>
+                    <ul>
+                        <li>
+                            <a href="#electronics">Electronics</a>
+                            <ul>
+                                <li>
+                                    <a href="#phones">Phones</a>
+                                    <ul>
+                                        <li><a href="#iphone">iPhone</a></li>
+                                        <li><a href="#android">Android</a></li>
+                                        <li><a href="#windows">Windows Phone</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#laptops">Laptops</a>
+                                    <ul>
+                                        <li><a href="#dell">Dell</a></li>
+                                        <li><a href="#hp">HP</a></li>
+                                        <li><a href="#lenovo">Lenovo</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#tablets">Tablets</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#clothing">Clothing</a>
+                            <ul>
+                                <li>
+                                    <a href="#mens">Men's</a>
+                                    <ul>
+                                        <li><a href="#shirts">Shirts</a></li>
+                                        <li><a href="#pants">Pants</a></li>
+                                        <li><a href="#shoes">Shoes</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#womens">Women's</a></li>
+                                <li><a href="#kids">Kids</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#accessories">Accessories</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#services">Services</a>
+                    <ul>
+                        <li>
+                            <a href="#consulting">Consulting</a>
+                            <ul>
+                                <li><a href="#business">Business Consulting</a></li>
+                                <li><a href="#it">IT Consulting</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#support">Support</a>
+                            <ul>
+                                <li><a href="#technical">Technical Support</a></li>
+                                <li><a href="#customer">Customer Support</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#training">Training</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#company">Company</a>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#team">Team</a></li>
+                        <li>
+                            <a href="#contact">Contact</a>
+                            <ul>
+                                <li><a href="#email">Email</a></li>
+                                <li><a href="#phone">Phone</a></li>
+                                <li><a href="#address">Address</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#blog">Blog</a></li>
+            </ul>
+        </nav>
+
+        <div class="info">
+            <h3>How This Menu Works</h3>
+            <p>This is a <strong>pure CSS multilevel menu</strong> using <code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code> tags with CSS positioning.</p>
+            
+            <h3 style="margin-top: 15px;">Key CSS Techniques Used:</h3>
+            <div class="menu-structure">
+                <strong>Level 1 (Main Menu):</strong><br>
+                - Display: inline-block for horizontal layout<br>
+                - position: relative as reference point<br>
+                - Background color: #0073e6<br>
+                - On hover: displays first-level submenu<br>
+                <br>
+                
+                <strong>Level 2 (First Submenu):</strong><br>
+                - position: absolute (top: 100%, left: 0)<br>
+                - Initially hidden with display: none<br>
+                - Shows on parent li:hover<br>
+                - Appears below main menu<br>
+                <br>
+                
+                <strong>Level 3 (Second Submenu):</strong><br>
+                - position: absolute (left: 100%, top: 0)<br>
+                - Positioned to the right of parent item<br>
+                - Hidden until parent li:hover<br>
+                <br>
+                
+                <strong>Level 4 (Third Submenu):</strong><br>
+                - Similar positioning as Level 3<br>
+                - Demonstrates deep nesting capability
+            </div>
+
+            <h3 style="margin-top: 15px;">CSS Features Demonstrated:</h3>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li><strong>Positioning:</strong> absolute and relative positioning for menu placement</li>
+                <li><strong>Display:</strong> inline-block for horizontal menu items</li>
+                <li><strong>Pseudo-classes:</strong> :hover for interactivity</li>
+                <li><strong>Colors:</strong> Background colors with hover effects</li>
+                <li><strong>Box Model:</strong> Padding, margins, and borders</li>
+                <li><strong>Transitions:</strong> Smooth color changes on hover</li>
+                <li><strong>Shadow:</strong> Box-shadow for depth effect</li>
+                <li><strong>Border-radius:</strong> Rounded corners</li>
+                <li><strong>Z-index (implicit):</strong> Proper stacking through positioning</li>
+            </ul>
+
+            <h3 style="margin-top: 15px;">How to Customize:</h3>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>Change colors by modifying background-color in CSS</li>
+                <li>Adjust positioning by modifying <code>top</code>, <code>left</code>, <code>right</code> values</li>
+                <li>Add more submenu levels by following the same positioning pattern</li>
+                <li>Modify padding for different menu sizes</li>
+                <li>Change hover effects by adjusting transition properties</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

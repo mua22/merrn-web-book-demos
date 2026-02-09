@@ -1,0 +1,185 @@
+/* External CSS for Multilevel Menu */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #0073e6;
+    padding-bottom: 10px;
+}
+
+/* Main Menu Styling */
+.navbar {
+    list-style: none;
+    position: relative;
+    background-color: #0073e6;
+    border-radius: 5px;
+    overflow: visible;
+}
+
+.navbar > li {
+    display: inline-block;
+    position: relative;
+}
+
+.navbar > li > a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.navbar > li > a:hover {
+    background-color: #0056b3;
+}
+
+/* First Level Submenu */
+.navbar li ul {
+    list-style: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #005fb3;
+    min-width: 200px;
+    display: none;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar li:hover > ul {
+    display: block;
+}
+
+.navbar li ul li {
+    display: block;
+    position: relative;
+}
+
+.navbar li ul li a {
+    display: block;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-size: 0.95em;
+}
+
+.navbar li ul li a:hover {
+    background-color: #003d82;
+    padding-left: 30px;
+}
+
+/* Second Level Submenu (Nested) */
+.navbar li ul li ul {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: #003d82;
+    min-width: 180px;
+    display: none;
+    border-radius: 0 5px 5px 0;
+}
+
+.navbar li ul li:hover > ul {
+    display: block;
+}
+
+.navbar li ul li ul li {
+    display: block;
+}
+
+.navbar li ul li ul li a {
+    padding: 10px 15px;
+    font-size: 0.9em;
+    color: #fff;
+}
+
+.navbar li ul li ul li a:hover {
+    background-color: #002a5c;
+    padding-left: 25px;
+}
+
+/* Third Level Submenu (Triple nested) */
+.navbar li ul li ul li ul {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: #002a5c;
+    min-width: 160px;
+    display: none;
+    border-radius: 0 5px 5px 0;
+}
+
+.navbar li ul li ul li:hover > ul {
+    display: block;
+}
+
+.navbar li ul li ul li ul li a {
+    padding: 8px 12px;
+    font-size: 0.85em;
+}
+
+.navbar li ul li ul li ul li a:hover {
+    background-color: #001a3a;
+}
+
+/* Info Section */
+.info {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-left: 4px solid #0073e6;
+    border-radius: 3px;
+}
+
+.info h3 {
+    color: #0073e6;
+    margin-bottom: 10px;
+}
+
+.info p {
+    color: #666;
+    line-height: 1.6;
+}
+
+code {
+    background-color: #e8e8e8;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    color: #d63384;
+}
+
+.menu-structure {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin-top: 15px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    line-height: 1.8;
+    color: #333;
+}
