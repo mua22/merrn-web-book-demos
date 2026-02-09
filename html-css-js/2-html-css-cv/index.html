@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jane Smith - CV</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Internal CSS */
+        .summary {
+            background-color: #fff3e0;
+            padding: 15px;
+            border-left: 4px solid #ff9800;
+            margin-bottom: 20px;
+            border-radius: 3px;
+        }
+
+        .experience-item {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .experience-item::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #0073e6;
+            font-size: 1.2em;
+        }
+
+        .education {
+            position: relative;
+            left: 10px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="placeholderimage.png" alt="Jane Smith Profile Photo" class="profile-img" style="width: 120px; height: 120px; object-fit: cover;">
+            <h1>JANE SMITH</h1>
+            <p style="color: #666; font-size: 1.1em; margin-bottom: 15px;">Full Stack Web Developer</p>
+        </header>
+
+        <div class="contact-info" style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 200px;">
+                <p><strong>Email:</strong> jane.smith@example.com</p>
+                <p><strong>Phone:</strong> +1 (555) 987-6543</p>
+            </div>
+            <div style="flex: 1; min-width: 200px;">
+                <p><strong>Location:</strong> San Francisco, CA</p>
+                <p><strong>LinkedIn:</strong> linkedin.com/in/janesmith</p>
+            </div>
+        </div>
+
+        <div class="summary">
+            <h2 style="margin-top: 0; border: none;">PROFESSIONAL SUMMARY</h2>
+            <p>Passionate full-stack web developer with 6+ years of experience building responsive and scalable web applications. 
+            Expertise in modern HTML, CSS, and JavaScript frameworks. Dedicated to writing clean, maintainable code and delivering 
+            exceptional user experiences.</p>
+        </div>
+
+        <section>
+            <h2>WORK EXPERIENCE</h2>
+            
+            <div class="experience-item">
+                <h3 class="job-title">Lead Frontend Developer</h3>
+                <p class="company">Tech Innovations Inc. | <span class="date">March 2022 - Present</span></p>
+                <ul>
+                    <li>Led frontend team of 5 developers in building responsive web applications</li>
+                    <li>Implemented CSS Grid and Flexbox for modern layouts</li>
+                    <li>Improved website performance by 35% through CSS optimization</li>
+                    <li>Mentored junior developers on best CSS and HTML practices</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3 class="job-title">Web Developer</h3>
+                <p class="company">Creative Design Studios | <span class="date">July 2018 - February 2022</span></p>
+                <ul>
+                    <li>Developed custom HTML/CSS solutions for client websites</li>
+                    <li>Used CSS positioning and floating for complex layouts</li>
+                    <li>Collaborated with designers to implement pixel-perfect designs</li>
+                    <li>Ensured cross-browser compatibility and responsive design</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>EDUCATION</h2>
+            
+            <div class="education">
+                <h3>Bachelor of Science in Computer Science</h3>
+                <p><strong>University of California, Berkeley</strong> | Graduated May 2018</p>
+            </div>
+
+            <div class="education">
+                <h3>Advanced Web Development Certificate</h3>
+                <p><strong>General Assembly</strong> | Completed August 2017</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>TECHNICAL SKILLS</h2>
+            <p style="margin-bottom: 10px;"><strong>Languages & Markup:</strong></p>
+            <div class="skills-list">
+                <span class="skill-item">HTML5</span>
+                <span class="skill-item">CSS3</span>
+                <span class="skill-item">JavaScript</span>
+                <span class="skill-item">Python</span>
+            </div>
+
+            <p style="margin-bottom: 10px; margin-top: 15px;"><strong>Frameworks & Tools:</strong></p>
+            <div class="skills-list">
+                <span class="skill-item">React</span>
+                <span class="skill-item">Vue.js</span>
+                <span class="skill-item">Git</span>
+                <span class="skill-item">VS Code</span>
+            </div>
+
+            <p style="margin-bottom: 10px; margin-top: 15px;"><strong>CSS Techniques:</strong></p>
+            <div class="skills-list">
+                <span class="skill-item">Flexbox</span>
+                <span class="skill-item">CSS Grid</span>
+                <span class="skill-item">Responsive Design</span>
+                <span class="skill-item">Floating Layouts</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>FEATURED PROJECTS</h2>
+            
+            <div style="position: relative; padding: 15px; background-color: #fafafa; border-radius: 5px; margin-bottom: 15px;">
+                <h3 style="margin-top: 0;">Responsive Blog Platform</h3>
+                <p>Built a fully responsive blog platform using HTML, CSS with Flexbox and Grid layouts. 
+                Implemented floating sidebar navigation for desktop view.</p>
+                <p style="color: #666; font-size: 0.9em;">Technologies: HTML5, CSS3 (Flexbox, Grid), JavaScript</p>
+            </div>
+
+            <div style="position: relative; padding: 15px; background-color: #fafafa; border-radius: 5px; margin-bottom: 15px;">
+                <h3 style="margin-top: 0;">E-Commerce Product Gallery</h3>
+                <p>Created an interactive product gallery with CSS positioning and animations. 
+                Implemented floating product cards that rearrange responsively.</p>
+                <p style="color: #666; font-size: 0.9em;">Technologies: HTML5, CSS3 (Positioning, Floating), JavaScript</p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p style="margin-bottom: 5px;">References available upon request</p>
+            <p>Last updated: February 2026</p>
+        </footer>
+    </div>
+</body>
+</html>
