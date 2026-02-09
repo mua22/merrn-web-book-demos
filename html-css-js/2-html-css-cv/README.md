@@ -10,7 +10,7 @@ This is a professional CV (Curriculum Vitae) created using **HTML and CSS** with
 - **README.md** - This documentation file
 
 ## Screenshot
-Below is a screenshot of the rendered CV (uses the existing `placeholderimage.png` as a sample screenshot). Replace the image file with your own screenshot named `screenshot.png` if desired.
+Below is a screenshot of the rendered CV 
 
 ![CV Screenshot](screenshot.png)
 
