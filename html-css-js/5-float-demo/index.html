@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Float Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f7f7f7;
+    }
+
+    h1, h2 {
+      margin-top: 0;
+    }
+
+    .box {
+      padding: 10px;
+      color: #000;
+      box-sizing: border-box;
+    }
+
+    /* Simple float left and right */
+    .float-left {
+      float: left;
+      width: 40%;
+      background-color: #d8ecff;
+      border: 1px solid #6aa9ff;
+      margin-right: 10px;
+    }
+
+    .float-right {
+      float: right;
+      width: 40%;
+      background-color: #ffe4c4;
+      border: 1px solid #ffb366;
+      margin-left: 10px;
+    }
+
+    .normal-text {
+      background-color: #ffffff;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    /* Clearing floats */
+    .clearfix {
+      clear: both;
+    }
+
+    /* Overflow example: parent without clearfix vs with overflow/clear */
+    .parent {
+      border: 2px solid #999;
+      background-color: #fff;
+      margin-top: 20px;
+      padding: 10px;
+    }
+
+    .child-float {
+      float: left;
+      width: 40%;
+      background-color: #e0ffe0;
+      border: 1px solid #66cc66;
+      margin-right: 10px;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .parent.no-fix {
+      /* This parent will collapse in height because of the float */
+    }
+
+    .parent.overflow-fix {
+      overflow: auto; /* This makes the parent wrap around its floated children */
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    /* Extra clear example: clear on content after a float */
+    .float-small {
+      float: left;
+      width: 120px;
+      height: 70px;
+      background-color: #f0d9ff;
+      border: 1px solid #c27fff;
+      margin: 0 10px 10px 0;
+      padding: 10px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    .cleared-paragraph {
+      clear: left;
+      background-color: #ffffff;
+      border: 1px dashed #999;
+      padding: 10px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Float Demo</h1>
+
+  <div class="section">
+    <h2>1. Basic float left and right</h2>
+    <div class="box float-left">
+      This box is floated <strong>left</strong>.
+    </div>
+    <div class="box float-right">
+      This box is floated <strong>right</strong>.
+    </div>
+    <p class="normal-text">
+      This is normal text inside the same container. Notice how it wraps
+      around the floated boxes. The floats are taken out of normal flow,
+      so inline content flows around them.
+    </p>
+    <div class="clearfix"></div>
+    <p>
+      The line above uses <code>clear: both;</code> to push the next content
+      down below the floats.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>2. Parent height without clear (no fix)</h2>
+    <p>
+      This parent has a floated child but no clearfix or overflow fix.
+      The border appears to collapse because the parent does not "see"
+      the height of the floated child.
+    </p>
+    <div class="parent no-fix">
+      <div class="child-float">
+        I am floated inside a parent with <strong>no clear or overflow fix</strong>.
+      </div>
+    </div>
+    <p>
+      Notice how the bottom of the parent border is very close to the top:
+      it did not expand to include the floated child.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>3. Parent height with overflow fix</h2>
+    <p>
+      This parent uses <code>overflow: auto;</code> so it will expand to
+      contain the floated child.
+    </p>
+    <div class="parent overflow-fix">
+      <div class="child-float">
+        I am floated inside a parent with <strong>overflow: auto;</strong>,
+        so the parent wraps around me.
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>4. Using <code>clear</code> on following content</h2>
+    <p>
+      In this example we float a small box to the left. The first paragraph
+      wraps around it, but the second paragraph uses <code>clear: left;</code>
+      so it starts <em>below</em> the float instead of beside it.
+    </p>
+    <div class="float-small">
+      Small floated box
+    </div>
+    <p>
+      This paragraph flows around the floated box. Its text appears to the
+      right of the small box and wraps underneath it as needed.
+    </p>
+    <p class="cleared-paragraph">
+      This paragraph has <code>clear: left;</code>, so it is pushed below
+      the left-floated box. This is another way to use <code>clear</code>
+      without adding an extra "clearfix" div.
+    </p>
+  </div>
+</body>
+</html>
+
