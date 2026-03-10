@@ -1,0 +1,30 @@
+#menu{
+    background-color: blue;
+    border-radius: 5px;
+}
+
+#menu li{
+    display: inline;
+    padding: 10px;
+    color: white;
+}
+#menu > li:hover{
+    background-color: white;
+    color: blue;
+}
+.has-dropdown{
+    position: relative
+}
+.has-dropdown .dropdown{
+    display: none;
+    position: absolute;
+    background-color: blue;
+    border-radius: 5px;
+    /* top: 100%; */
+    left: 0;
+}
+
+.has-dropdown:hover .dropdown{
+    display: block;
+    
+}
