@@ -8,7 +8,7 @@ window.onload = function () {
 $(function () {
   // this will also be called after page load
   console.log("DOM Loaded");
-  loadStories();
+  //   loadStories();
   $("#loadStoriesBtn").on("click", loadStories);
   $("#stories").on("click", ".btn-del", delStory); // event delegation
 });
