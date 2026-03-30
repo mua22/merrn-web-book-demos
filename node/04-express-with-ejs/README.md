@@ -55,3 +55,56 @@ nodemon server.js
 The server will start on port 3000. You can visit the following URLs in your browser:
 - Homepage: [http://localhost:3000/](http://localhost:3000/)
 - Contact Us page: [http://localhost:3000/contact-us](http://localhost:3000/contact-us)
+- Hobbies page: [http://localhost:3000/hobbies](http://localhost:3000/hobbies)
+
+## How EJS Works (For Beginners)
+
+EJS (Embedded JavaScript) is a simple templating engine that lets you generate HTML markup with plain JavaScript. Here's a quick overview of how it works in this project:
+
+- **Views Folder**: By default, Express looks for your EJS templates (your web pages) in the `views/` directory.
+- **Rendering**: When you call a method like `res.render("homepage")` in `server.js`, Express finds `views/homepage.ejs`, executes any JavaScript embedded inside it, and converts it into standard HTML.
+- **Client Side**: The browser only receives the final HTML. It never sees your EJS tags (which look like `<% %>` or `<%= %>`). This allows you to dynamically build pages on the server before sending them to the user.
+
+## The `public` Folder & Static Routes
+
+The `public` folder is used to store static assets that your application needs to serve directly to the client. These files are typically:
+
+- **CSS Stylesheets** to style your web pages.
+- **Client-Side JavaScript** for browser interactions.
+- **Images** and other media files.
+
+In `server.js`, we use a built-in Express middleware to create a "public route":
+
+```javascript
+app.use(express.static("public"));
+```
+
+This single line tells Express to expose the *contents* of the `public` directory. When the client browser makes a request for a file, Express will automatically look inside the `public` folder to see if it exists.
+
+### How to Set Paths for CSS, JS, and Images
+
+Because these files are served from the root (`/`) of your application, you **should not** include `/public/` in your URLs. You reference the files as if the `public` folder itself is the main root container.
+
+For example, if you organize your folder like this:
+- `public/css/style.css`
+- `public/js/app.js`
+- `public/logo.png`
+
+You would link to them in your EJS templates (e.g., inside the `<head>` or `<body>` of `views/homepage.ejs`) with absolute paths:
+
+**Linking a CSS file:**
+```html
+<link rel="stylesheet" href="/css/style.css">
+```
+
+**Linking Client-Side JS:**
+```html
+<script src="/js/app.js"></script>
+```
+
+**Adding an Image:**
+```html
+<img src="/logo.png" alt="My Website Logo">
+```
+
+*Note the leading forward slash (`/`). It ensures the browser always looks for these files exactly at the root of your server (e.g., `http://localhost:3000/css/style.css`), regardless of what page URL the user is currently on.*
