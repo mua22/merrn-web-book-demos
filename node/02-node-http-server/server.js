@@ -11,6 +11,7 @@ let http = require("http");
 let server = http.createServer(function (req, res) {
   // Log the requested URL to the terminal so we can see what the user asked for
   console.log("Requested URL: " + req.url);
+  console.log("Requested Method: " + req.method);
 
   // 3. Handle different routes (URLs)
   // If the user visits the home page ("/")
