@@ -19,6 +19,8 @@ const Book = require('./models/book');
 
 
 // 3. Define RESTful API Routes
+const authorsRouter = require('./routes/authors');
+app.use('/api/authors', authorsRouter);
 
 // CREATE: Add a new book
 app.post('/api/books', async (req, res) => {

@@ -1,8 +1,10 @@
 # Basic Express & Mongoose RESTful API
 
-This is a beginner-friendly demonstration of how to build a simple RESTful API using Node.js, Express, and Mongoose. It uses a single `server.js` file without extracting routers, keeping all the code in one place for easy understanding.
+This is a beginner-friendly demonstration of how to build a simple RESTful API using Node.js, Express, and Mongoose. It demonstrates both inline routes (for a `Book` model) and extracted router files (for an `Author` model) to show you how a basic API is structured.
 
-The API manages a simple `Book` model.
+The API manages two models:
+1. `Book` (Routes handled in `server.js`)
+2. `Author` (Routes extracted to `routes/authors.js`)
 
 ## Prerequisites
 
@@ -34,7 +36,7 @@ Before you begin, make sure you have the following installed on your machine:
 
 You can test the API using tools like [Postman](https://www.postman.com/), [Insomnia](https://insomnia.rest/), or the VS Code [Thunder Client](https://www.thunderclient.com/) extension. 
 
-Below are the routes available and how to test them:
+Below are the routes available and how to test them (using the `Book` API as an example, but the `Author` API at `/api/authors` works exactly the same way):
 
 ### 1. CREATE a Book (POST)
 - **Method:** `POST`
@@ -79,3 +81,24 @@ Below are the routes available and how to test them:
 - **Method:** `DELETE`
 - **URL:** `http://localhost:3000/api/books/<paste_an_id_here>`
 - **Expected Result:** You will get a success message like `{"message": "Book deleted successfully"}`.
+
+---
+
+## Testing the Author API
+
+The Author API works identically, but the route is `/api/authors`. Here is an example of creating an author:
+
+### 1. CREATE an Author (POST)
+- **Method:** `POST`
+- **URL:** `http://localhost:3000/api/authors`
+- **Headers:** `Content-Type: application/json`
+- **Body (JSON):**
+  ```json
+  {
+    "name": "Isaac Asimov",
+    "nationality": "Russian-American",
+    "birthYear": 1920
+  }
+  ```
+
+For `GET`, `PUT`, and `DELETE` requests, simply replace `/api/books` with `/api/authors` and provide the correct Author `_id`!
