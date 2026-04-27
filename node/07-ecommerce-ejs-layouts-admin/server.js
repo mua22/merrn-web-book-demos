@@ -8,30 +8,16 @@ mongoose.connect('mongodb://127.0.0.1:27017/techstore')
     .then(() => console.log('Connected to MongoDB'))
     .catch(err => console.error('Could not connect to MongoDB', err));
 
-// Product Model
+// Models
 const Product = require('./models/Product');
-
-// Seed Database
-async function seedDB() {
-    try {
-        const count = await Product.countDocuments();
-        if (count === 0) {
-            await Product.insertMany([
-                { id: 1, name: 'Premium Wireless Headphones', price: 199.99, image: '/images/headphones.jpg' },
-                { id: 2, name: 'Smart Fitness Watch', price: 149.50, image: '/images/watch.jpg' },
-                { id: 3, name: 'Mechanical Keyboard', price: 120.00, image: '/images/keyboard.jpg' },
-                { id: 4, name: 'Ergonomic Mouse', price: 79.99, image: '/images/mouse.jpg' }
-            ]);
-            console.log('Database seeded with products');
-        }
-    } catch (err) {
-        console.error('Error seeding DB:', err);
-    }
-}
-seedDB();
+const Category = require('./models/Category');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Body Parsers
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // Set Templating Engine
 app.use(expressLayouts);
@@ -42,6 +28,10 @@ app.set('views', path.join(__dirname, 'views'));
 // Static Files
 app.use(express.static('public'));
 
+// Admin Routes
+const adminRoutes = require('./routes/admin');
+app.use('/admin', adminRoutes);
+
 // Routes
 app.get('/', (req, res) => {
     res.render('index', { title: 'Home' });
@@ -49,7 +39,7 @@ app.get('/', (req, res) => {
 
 app.get('/products', async (req, res) => {
     try {
-        const products = await Product.find();
+        const products = await Product.find().populate('category');
         res.render('products', { title: 'Products', products });
     } catch (err) {
         console.error('Error fetching products:', err);

@@ -1,10 +1,13 @@
 # Basic Express E-Commerce Demo
 
+![App Screenshot](./screenshot.webp)
+
 A basic e-commerce landing page and side pages built using Express, EJS templating, `express-ejs-layouts`, and Bootstrap 5. This project is specifically designed as a beginner-friendly class demonstration.
 
 ## Features
 
 - **Express.js Backend**: A simple Express server setup handling routes.
+- **MongoDB Integration**: Uses Mongoose to define a `Product` model, automatically seeds the database, and fetches products dynamically.
 - **EJS Templating**: Dynamic HTML generation using EJS.
 - **Layouts**: Uses `express-ejs-layouts` for a consistent header/footer across all pages.
 - **Static Assets**: Serves custom CSS, client-side JavaScript, and images from a `public` directory.
@@ -15,6 +18,8 @@ A basic e-commerce landing page and side pages built using Express, EJS templati
 
 ```text
 .
+├── models/
+│   └── Product.js          # Mongoose data models
 ├── public/
 │   ├── css/
 │   │   └── style.css       # Custom styles
@@ -34,6 +39,7 @@ A basic e-commerce landing page and side pages built using Express, EJS templati
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/) installed on your machine.
+- [MongoDB](https://www.mongodb.com/try/download/community) installed and running locally on the default port (`27017`).
 
 ## Installation
 

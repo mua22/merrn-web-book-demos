@@ -1,0 +1,31 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Dashboard</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card text-white bg-primary mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Total Products</h5>
+                <p class="card-text display-4"><%= productCount %></p>
+                <a href="/admin/products" class="text-white">View Products</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Total Categories</h5>
+                <p class="card-text display-4"><%= categoryCount %></p>
+                <a href="/admin/categories" class="text-white">View Categories</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-4">
+    <h3>Quick Actions</h3>
+    <form action="/admin/seed" method="POST" onsubmit="return confirm('Are you sure you want to seed the database? This will delete existing products and categories.');">
+        <button type="submit" class="btn btn-warning">Seed Database</button>
+    </form>
+</div>
