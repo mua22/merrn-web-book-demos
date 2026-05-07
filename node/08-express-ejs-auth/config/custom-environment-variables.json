@@ -1,0 +1,5 @@
+{
+  "dbURI": "MONGODB_URI",
+  "jwtSecret": "JWT_SECRET",
+  "sessionSecret": "SESSION_SECRET"
+}

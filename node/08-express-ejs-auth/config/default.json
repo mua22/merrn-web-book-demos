@@ -1,0 +1,5 @@
+{
+  "dbURI": "mongodb://127.0.0.1:27017/express-auth-demo",
+  "jwtSecret": "mySuperSecretJwtTokenKey123",
+  "sessionSecret": "mySuperSecretSessionKey123"
+}
